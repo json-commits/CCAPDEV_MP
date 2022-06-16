@@ -1,0 +1,11 @@
+<script type="text/javascript" src="/js/terminal.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/terminal.css">
+<div class="mainBox">
+    <div class="headerBox">
+        <h1>{{company}}</h1>
+    </div>
+
+    {{#each routes}}
+        {{>route}}
+    {{/each}}
+</div>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/terminal.css">
+    <title>Book Tickets</title>
+</head>
+<body>
+      <div class = "navbar_contents">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="map.html">Map View</a></li>
+        <div class="dropdown">
+        <li><button>Bus Companies</button>
+        <div class="dropdownContent">
+          <a href="comp_Genesis.html" class="dropdownLink">Genesis</a>
+          
+          <a href="comp_DLTB.html" class="dropdownLink">DLTB</a>
+         
+          <a href="comp_Victory.html" class="dropdownLink">Victory</a>
+          
+          <a href="comp_Partas.html" class="dropdownLink">Partas</a>
+          
+          <a href="comp_JoyBus.html" class="dropdownLink">JoyBus</a>
+        </div>
+        </li>
+      </div>
+        <li><a href="booktickets.html"> Book Tickets</a></li>
+        <li><a href="login.html"> Login</a></li>
+        <li><a href="register.html"> Register</a></li>
+      </ul>
+    </div>
+
+    <div class="mainBox">
+
+        <div class="headerBox">
+            <h1>Tickets!</h1>
+        </div>
+        <div class="routeBox">
+          <div class="routeHeader">
+            <div class="leftRouteHeader">
+              <div class="Terminal">(DLTB) Paranaque Integrated Terminal, Manila (PAID!)</div>
+              <div class="destination">Destination: Baguio City</div>
+              <div class="schedule">05:00 - 11:00</div>
+            </div>
+            <div class="rightRouteHeader">
+              <div class="price">P883.00 (2x)</div>
+              <div class="buyBox"><button class = "btnBuy" onclick="cancelTickets()">CANCEL</button></div>
+          </div>
+          
+          </div>
+      </div>
+      <div class="routeBox">
+        <div class="routeHeader">
+          <div class="leftRouteHeader">
+            <div class="Terminal">(DLTB) Paranaque Integrated Terminal, Manila (PENDING!)</div>
+            <div class="destination">Destination: Batangas City Grand Terminal</div>
+            <div class="schedule">12:00 - 14:00</div>
+          </div>
+          <div class="rightRouteHeader">
+            <div class="price">P281.00 (4x)</div>
+            <div class="buyBox"><button class = "btnBuy" onclick="cancelTickets()">CANCEL</button></div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+  </div>
+
+  <script src="../public/js/terminal.js"></script>
+</body>
+</html>
