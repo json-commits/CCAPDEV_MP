@@ -1,41 +1,45 @@
 <!DOCTYPE html>
+<!--suppress HtmlUnknownTarget -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!--    <link rel="stylesheet" href="../public/css/login.css">-->
-<!--    <script src="JS/register.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
     <title>Busina</title>
 </head>
 
 <div class = "navbar_contents">
     <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="map.html">Map View</a></li>
-        <div class="dropdown">
-            <li><button>Bus Companies</button>
+        <li><a href="/map">Map View</a></li>
+        <li>
+            <div class="dropdown">
+                <button>Bus Companies</button>
                 <div class="dropdownContent">
-                    <a href="company/Genesis" class="dropdownLink">Genesis</a>
+                    <a href="/company/Genesis" class="dropdownLink">Genesis</a>
 
-                    <a href="company/DLTB" class="dropdownLink">DLTB</a>
+                    <a href="/company/DLTB" class="dropdownLink">DLTB</a>
 
-                    <a href="company/Victory" class="dropdownLink">Victory</a>
+                    <a href="/company/Victory" class="dropdownLink">Victory</a>
 
-                    <a href="company/Partas" class="dropdownLink">Partas</a>
+                    <a href="/company/Partas" class="dropdownLink">Partas</a>
 
-                    <a href="company/JoyBus" class="dropdownLink">JoyBus</a>
+                    <a href="/company/JoyBus" class="dropdownLink">JoyBus</a>
                 </div>
-            </li>
-        </div>
-        <li><a href="booktickets.html"> Book Tickets</a></li>
-        {{#if user}}
+            </div>
+        </li>
+        {{!{{#if user}}
+            <li><a href="/cart">My Cart</a></li>
             <li><a>Welcome [user here]!</a></li>
-        {{else}}
-            <li><a href="login.html"> Login</a></li>
-            <li><a href="register.html"> Register</a></li>
-        {{/if}}
+            {{!{{#if admin}}
+                <li><a href="/admin">Admin Panel</a></li>
+            {{!{{/if}}
+        {{!{{else}}
+            <li><a href="/login"> Login</a></li>
+            <li><a href="/register"> Register</a></li>
+        {{!{{/if}}
     </ul>
 </div>
 
