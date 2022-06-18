@@ -11,7 +11,7 @@ function addRoute(){
         return;
     }
 
-    $.get("/add", {CMP: company, TML: terminal, DST: destination, SCHD: schedule, PRC: price})
+    $.get("/add", {company: company, terminal: terminal, destination: destination, schedule: schedule, price: price})
 
     $("#company").val('');
     $("#terminal").val('');
@@ -19,3 +19,20 @@ function addRoute(){
     $("#schedule").val('');
     $("#price").val('');
 }
+
+const routeBox = document.querySelector('#routeBox');
+routeBox.addEventListener('click', function (e) {
+    if (e.target instanceof Element && e.target.matches('.btnRemove')) {
+        // your code here
+        let routeBoxElement = e.target.parentElement
+        let textCollection = routeBoxElement.getElementsByClassName('text')
+        let company = textCollection[0].textContent
+        let terminal = textCollection[1].textContent
+        let destination = textCollection[2].textContent
+        let schedule = textCollection[3].textContent
+
+        $.get('/delete', {company: company, terminal: terminal, destination: destination, schedule: schedule, price: price})
+
+        routeBox.remove()
+    }
+}, true);
