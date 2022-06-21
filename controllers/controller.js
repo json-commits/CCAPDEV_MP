@@ -35,11 +35,11 @@ const controller = {
     getAdd: function(req, res) {
         // your code here
         console.log("getAdd was ran.")
-        let company = req.query.CMP;
-        let terminal = req.query.TML;
-        let destination = req.query.DST;
-        let schedule = req.query.SCHD;
-        let price = req.query.PRC;
+        let company = req.query.company;
+        let terminal = req.query.terminal;
+        let destination = req.query.destination;
+        let schedule = req.query.schedule;
+        let price = req.query.price;
         let data = {company: company, terminal: terminal, destination: destination, schedule: schedule, price: price}
 
         db.insertOne(Route, data,function(){})
@@ -48,8 +48,12 @@ const controller = {
     getDelete: function (req, res) {
         // your code here
         console.log("getDelete was ran.")
-        let refno = Number(req.query.REFNO)
-        let data = {refno: refno}
+        let company = req.query.company;
+        let terminal = req.query.terminal;
+        let destination = req.query.destination;
+        let schedule = req.query.schedule;
+        let price = req.query.price;
+        let data = {company: company, terminal: terminal, destination: destination, schedule: schedule, price: price}
         db.deleteOne(Route, data, function (){})
     },
 
@@ -70,6 +74,28 @@ const controller = {
         db.findMany(Route, null, null, function(result){
             res.render("admin", {routes: result.map(result => result.toJSON())})
         })
+    },
+
+    getMap(req, res) {
+        console.log(`getMap was ran.`)
+        res.render("map")
+    },
+
+    getLogin(req, res) {
+        console.log(`getLogin was ran.`)
+        res.render("login")
+    },
+
+    getRegister(req, res) {
+        console.log(`getRegister was ran.`)
+        res.render("register");
+    },
+
+    getNews(req, res) {
+        console.log(`getNews was ran looking for ${req.params.article}`)
+        let article_n = req.params.company;
+        res.render(`news${article_n}`)
+
     }
 }
 

@@ -20,19 +20,29 @@ function addRoute(){
     $("#price").val('');
 }
 
-const routeBox = document.querySelector('#routeBox');
-routeBox.addEventListener('click', function (e) {
-    if (e.target instanceof Element && e.target.matches('.btnRemove')) {
-        // your code here
-        let routeBoxElement = e.target.parentElement
-        let textCollection = routeBoxElement.getElementsByClassName('text')
-        let company = textCollection[0].textContent
-        let terminal = textCollection[1].textContent
-        let destination = textCollection[2].textContent
-        let schedule = textCollection[3].textContent
+document.addEventListener("DOMContentLoaded", function (event) {
 
-        $.get('/delete', {company: company, terminal: terminal, destination: destination, schedule: schedule, price: price})
+    const routeBox = document.querySelector('.routeBox');
+    routeBox.addEventListener('click', function (e) {
+        if (e.target instanceof Element && e.target.matches('.btnRemove')) {
+            console.log("clicked remove");
+            // your code here
+            let routeBoxElement = e.path[4]
+            console.log(routeBoxElement);
+            let textCollection = routeBoxElement.getElementsByClassName('text')
+            console.log(textCollection);
 
-        routeBox.remove()
-    }
-}, true);
+            let company = textCollection[0].textContent
+            let terminal = textCollection[1].textContent
+            let destination = textCollection[2].textContent.replace('Destination: ', '')
+            let schedule = textCollection[3].textContent
+            let price = Number(textCollection[4].textContent.replace('P', ''))
+
+            console.log({company: company, terminal: terminal, destination: destination, schedule: schedule, price: price})
+            $.get('/delete', {company: company, terminal: terminal, destination: destination, schedule: schedule, price: price})
+
+            // routeBox.remove()
+        }
+    }, true);
+
+});
