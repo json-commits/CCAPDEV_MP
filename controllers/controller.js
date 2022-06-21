@@ -93,7 +93,7 @@ const controller = {
 
     getNews(req, res) {
         console.log(`getNews was ran looking for ${req.params.article}`)
-        let article_n = req.params.company;
+        let article_n = req.params.article;
         res.render(`news${article_n}`)
 
     }
